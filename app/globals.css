@@ -1,26 +1,45 @@
+/* app/globals.css   [MODIFIÉ : remplace tout le contenu] */
+/* Charte HoneyLMS. Les couleurs sont ESTIMÉES à l'œil sur les mock-ups : à ajuster avec la charte
+   officielle de Honey Group si tu l'as. */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Couleurs de marque */
+  --color-navy: #0c2350; /* titres, bandeaux, texte principal */
+  --color-brand: #1558d6; /* boutons principaux, liens, domaine Langues */
+  --color-honey: #f7c21c; /* accents, soulignement du lien actif, barres de progression */
+  --color-tangerine: #f0701e; /* bouton « Reprendre », domaine Bureautique */
+  --color-leaf: #2e8b3d; /* domaine EDUCTOUR, leçon terminée */
+
+  /* Fonds et bordures */
+  --color-cream: #faf7f0; /* fond des pages */
+  --color-line: #e3dccb; /* bordures */
+  --color-muted: #5b6784; /* texte secondaire */
+
+  /* Teintes douces des badges de domaine */
+  --color-brand-soft: #dbe7fb;
+  --color-tangerine-soft: #fce6d4;
+  --color-leaf-soft: #dff0d9;
 }
 
+/* « inline » car les valeurs viennent des variables CSS créées par next/font (voir app/layout.tsx) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: light; /* pas de mode sombre au MVP */
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-cream text-navy font-sans;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+  }
 }

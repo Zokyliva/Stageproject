@@ -41,3 +41,9 @@ yarn-error.log*
 next-env.d.ts
 
 /generated/prisma
+
+/generated
+/storage
+/storage-test
+*.dump
+!.env.example

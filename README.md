@@ -306,8 +306,12 @@ stage
 ├─ package-lock.json
 ├─ package.json
 ├─ prisma
-│  ├─ lib
-│  │  └─ prisma.ts
+│  ├─ migrations
+│  │  ├─ 20261011195856_init
+│  │  │  └─ migration.sql
+│  │  ├─ 20261011201702_init
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
 │  └─ schema.prisma
 ├─ prisma7.config.ts
 ├─ public
